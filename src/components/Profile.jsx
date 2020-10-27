@@ -1,8 +1,8 @@
-
+import classes from './Profile.module.css';
 
 const Profile = () => {
-    return <div className="content">
-        <div className="content-img"></div>
+    return <div className={classes.content}>
+        <div className={classes.content_img}></div>
         <div className="avatar-img">
             avatar + description
     </div>
@@ -13,8 +13,8 @@ const Profile = () => {
       </div>
             <div>
                 posts
-        <div>post 1</div>
-                <div>post 2</div>
+                <div className={classes.item}>post 1</div>
+                <div className={classes.item}>post 2</div>
             </div>
         </div>
     </div>

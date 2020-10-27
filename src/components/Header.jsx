@@ -1,8 +1,8 @@
-
+import classes from './Header.module.css';
 
 const Header = () => {
-    return <header className="header">
-        <div className="header-icon"></div>
+    return <header className={classes.header}>
+        <div className={classes.icon}></div>
     </header>
 }
 
