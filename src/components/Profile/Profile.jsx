@@ -5,7 +5,7 @@ const Profile = () => {
     return (
         <div className={s.content}>
             <div className={s.content_img}></div>
-            <div className="avatar-img">
+            <div>
                 avatar + description
             </div>
             <MyPosts />
