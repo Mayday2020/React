@@ -6,11 +6,13 @@
     padding: 10px;
     background-color: azure;
 }
-.active {
-    color: dodgerblue;
-}
-.dialog {
 
+.dialog a {
+    color: darkgray;
+    text-decoration: none;
+}
+.active a {
+    color: dodgerblue;
 }
 .messages {
     padding: 10px;

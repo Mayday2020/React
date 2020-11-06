@@ -2,7 +2,7 @@
 
 .nav {
     grid-area: n;
-    background-color: red;
+    background-color: #d7a6cc;
   }
 .item a {
     text-decoration: none;
