@@ -3,9 +3,10 @@ import DialogItem from "./Dialog/DialogItem";
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {                        // Компанента -  диалог
+    debugger;
+    let dialogsElement = props.state.dialogs.map(d => <DialogItem id={d.id} name={d.name}/>);         //Пользователь
+    let messagesElement = props.state.messages.map(m => <Message message={m.message}/>);              //Сообщение
 
-    let dialogsElement = props.dialogs.map(d => <DialogItem id={d.id} name={d.name}/>);         //Пользователь
-    let messagesElement = props.messages.map(m => <Message message={m.message}/>);              //Сообщение
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
