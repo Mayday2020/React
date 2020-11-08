@@ -1,47 +1,38 @@
 import s from './Dialogs.module.css';
 import {NavLink} from "react-router-dom";
 
-const DialogItem = (props) => {             //Собеседник
+const DialogItem = (props) => {             //Компанента - Собеседник
     const path = "/dialogs/" + props.id;    //формирует адрес по ID пользователя
     return (
         <div className={s.dialog + ' ' + s.active}><NavLink to={path}>{props.name}</NavLink></div>
     )
 }
-const Message = (props) => {                //Переписка
-    return (
-        <div className={s.message}>{props.message}</div>
-    )
-}
-const Dialogs = (props) => {
-    let d = {id: 1, name: "Dmitry"};
-    let v = {id: 2, name: "Vlad"};
-    let k = {id: 3, name: "Kostya"};
-    let a = {id: 4, name: "Alex"};
-    let n = {id: 5, name: "Nastya"};
-    let dialogsData = [d, v, k, a, n]
+const Message = props => <div className={s.message}>{props.message}</div>;            //Компанента - Переписка
 
-    let messagesData = [
+const Dialogs = (props) => {                        // Компанента -  диалог
+    let dialogs = [{id: 1, name: "Dmitry"},         // Список собеседников
+        {id: 2, name: "Vlad"},
+        {id: 3, name: "Kostya"},
+        {id: 4, name: "Alex"},
+        {id: 5, name: "Nastya"}
+    ];
+    let messages = [                                // История сообщений
         {id: 1, message: "Hi!"},
         {id: 2, message: "How are you?"},
         {id: 3, message: "Where are you from?"},
         {id: 4, message: "How old are you?"},
         {id: 5, message: "Do you like flowers?"}
-    ]
+    ];
+    let dialogsElement = dialogs.map(d => <DialogItem id={d.id} name={d.name}/>);         //Пользователь
+    let messagesElement = messages.map(m => <Message message={m.message}/>);              //Сообщение
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>
-                <DialogItem name="Vlad" id="2"/>
-                <DialogItem name="Kostya" id="3"/>
-                <DialogItem name="Alex" id="4"/>
-                <DialogItem name="Nastya" id="5"/>
+                {dialogsElement}
             </div>
             <div className={s.messages}>
-                <Message message={messagesData[0].message}/>
-                <Message message={messagesData[1].message}/>
-                <Message message={messagesData[2].message}/>
-                <Message message={messagesData[3].message}/>
-                <Message message={messagesData[4].message}/>
+                {messagesElement}
             </div>
         </div>
 
