@@ -1,13 +1,6 @@
 import s from './Dialogs.module.css';
-import {NavLink} from "react-router-dom";
-
-const DialogItem = (props) => {             //Компанента - Собеседник
-    const path = "/dialogs/" + props.id;    //формирует адрес по ID пользователя
-    return (
-        <div className={s.dialog + ' ' + s.active}><NavLink to={path}>{props.name}</NavLink></div>
-    )
-}
-const Message = props => <div className={s.message}>{props.message}</div>;            //Компанента - Переписка
+import DialogItem from "./Dialog/DialogItem";
+import Message from "./Message/Message";
 
 const Dialogs = (props) => {                        // Компанента -  диалог
     let dialogs = [{id: 1, name: "Dmitry"},         // Список собеседников
@@ -25,7 +18,6 @@ const Dialogs = (props) => {                        // Компанента -  �
     ];
     let dialogsElement = dialogs.map(d => <DialogItem id={d.id} name={d.name}/>);         //Пользователь
     let messagesElement = messages.map(m => <Message message={m.message}/>);              //Сообщение
-
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
@@ -35,8 +27,6 @@ const Dialogs = (props) => {                        // Компанента -  �
                 {messagesElement}
             </div>
         </div>
-
     )
 }
-
 export default Dialogs;
