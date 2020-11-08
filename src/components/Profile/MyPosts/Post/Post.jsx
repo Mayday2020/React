@@ -4,7 +4,7 @@ const Post = (props) => {
     console.log(props.message);
     return (
         <div className={s.item}>
-            <img src="https://i.ytimg.com/vi/fUWrhetZh9M/maxresdefault.jpg" alt="" />
+            <div className={s.itemImg}></div>
             <p>{props.message}</p>
             <span>{props.likeCount} likes</span>
         </div>

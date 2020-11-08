@@ -1,4 +1,8 @@
 
-div {
+.postBlock {
   background-color: wheat;
+  padding: 10px;
+}
+.posts {
+  margin-top: 10px;
 }
