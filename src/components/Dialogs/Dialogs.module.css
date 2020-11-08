@@ -6,17 +6,29 @@
     padding: 10px;
     background-color: azure;
 }
-
+.dialogsAvatar {
+    background-color: rgb(79, 79, 145);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+.dialog {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.dialog a:hover {
+    color: #898ADB;
+}
 .dialog a {
     color: darkgray;
     text-decoration: none;
 }
-.active a {
+/*.active a {
     color: dodgerblue;
-}
+}*/
 .messages {
     padding: 10px;
 }
-.message {
 
-}
