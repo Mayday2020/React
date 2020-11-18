@@ -1,16 +1,23 @@
-
+.sidebar {
+    background-color: #898ADB;
+}
 
 .nav {
     grid-area: n;
-    background-color: #898ADB;
-  }
+}
 .item a {
     text-decoration: none;
     color: #fff;
-  }
-.item a.active {
-  color: gold;
 }
-.sidebar {
+.item a.active {
+    color: gold;
+}
+.navbar {
     list-style-type: none;
-  }
+}
+.friends{
+    padding-left: 30px;
+}
+.friendsItems {
+
+}
